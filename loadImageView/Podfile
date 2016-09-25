@@ -1,0 +1,10 @@
+platform :ios, ‘8.0’
+
+target 'loadImageView' do
+
+pod ‘AFNetworking’
+pod ‘YYModel’
+
+
+
+end

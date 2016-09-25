@@ -9,14 +9,19 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (nonatomic,strong)UITableView *tableview;
 
 @end
 
 @implementation ViewController
+- (void)loadView {
+    _tableview = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.view = _tableview;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 
