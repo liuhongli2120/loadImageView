@@ -8,6 +8,7 @@
 
 #import "HLAppInfo.h"
 
+
 @implementation HLAppInfo
 
 @end

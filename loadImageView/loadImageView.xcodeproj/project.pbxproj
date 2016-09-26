@@ -15,6 +15,8 @@
 		F2654D001D9810BC00CC746E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2654CFE1D9810BC00CC746E /* LaunchScreen.storyboard */; };
 		F2654D0A1D98179600CC746E /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = F2654D091D98179600CC746E /* NSArray+Log.m */; };
 		F2654D0D1D981F9000CC746E /* HLAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F2654D0C1D981F9000CC746E /* HLAppInfo.m */; };
+		F2654D171D98FD3000CC746E /* HLAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2654D151D98FD3000CC746E /* HLAppCell.m */; };
+		F2654D181D98FD3000CC746E /* HLAppCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2654D161D98FD3000CC746E /* HLAppCell.xib */; };
 		F482FF91FEE99560133C34A2 /* libPods-loadImageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 136F849113D2638F80F5EF97 /* libPods-loadImageView.a */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,9 @@
 		F2654D091D98179600CC746E /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		F2654D0B1D981F9000CC746E /* HLAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLAppInfo.h; path = ../HLAppInfo.h; sourceTree = "<group>"; };
 		F2654D0C1D981F9000CC746E /* HLAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLAppInfo.m; path = ../HLAppInfo.m; sourceTree = "<group>"; };
+		F2654D141D98FD3000CC746E /* HLAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLAppCell.h; sourceTree = "<group>"; };
+		F2654D151D98FD3000CC746E /* HLAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLAppCell.m; sourceTree = "<group>"; };
+		F2654D161D98FD3000CC746E /* HLAppCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLAppCell.xib; sourceTree = "<group>"; };
 		F84C89B64F77381E202433B1 /* Pods-loadImageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loadImageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-loadImageView/Pods-loadImageView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +98,9 @@
 				F2654CF41D9810BC00CC746E /* AppDelegate.m */,
 				F2654CF61D9810BC00CC746E /* ViewController.h */,
 				F2654CF71D9810BC00CC746E /* ViewController.m */,
+				F2654D141D98FD3000CC746E /* HLAppCell.h */,
+				F2654D151D98FD3000CC746E /* HLAppCell.m */,
+				F2654D161D98FD3000CC746E /* HLAppCell.xib */,
 				F2654D0E1D98D83500CC746E /* Model */,
 				F2654CF91D9810BC00CC746E /* Main.storyboard */,
 				F2654CFC1D9810BC00CC746E /* Assets.xcassets */,
@@ -194,6 +202,7 @@
 				F2654D001D9810BC00CC746E /* LaunchScreen.storyboard in Resources */,
 				F2654CFD1D9810BC00CC746E /* Assets.xcassets in Resources */,
 				F2654CFB1D9810BC00CC746E /* Main.storyboard in Resources */,
+				F2654D181D98FD3000CC746E /* HLAppCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2654CF81D9810BC00CC746E /* ViewController.m in Sources */,
+				F2654D171D98FD3000CC746E /* HLAppCell.m in Sources */,
 				F2654D0A1D98179600CC746E /* NSArray+Log.m in Sources */,
 				F2654D0D1D981F9000CC746E /* HLAppInfo.m in Sources */,
 				F2654CF51D9810BC00CC746E /* AppDelegate.m in Sources */,

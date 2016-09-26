@@ -11,6 +11,7 @@
 #import <YYModel.h>
 #import <UIImageView+WebCache.h>
 #import "HLAppInfo.h"
+#import "HLAppCell.h"
 
 
 static NSString *cellId = @"cellId";
@@ -21,12 +22,16 @@ static NSString *cellId = @"cellId";
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    NSOperationQueue *_downloadQueue;
+}
 - (void)loadView {
     _tableview = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     
     _tableview.dataSource = self;
-    [_tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+//    [_tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+    
+    [_tableview registerNib:[UINib nibWithNibName:@"HLAppCell" bundle:nil] forCellReuseIdentifier:cellId];
     
     self.view = _tableview;
     _tableview.rowHeight = 100;
@@ -34,6 +39,9 @@ static NSString *cellId = @"cellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _downloadQueue = [[NSOperationQueue alloc]init];
+    
     [self loadData];
 }
 
@@ -43,11 +51,42 @@ static NSString *cellId = @"cellId";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
+    HLAppCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     cell.textLabel.text = _appList[indexPath.row].name;
     
-    NSURL *url = [NSURL URLWithString:_appList[indexPath.row].icon];
-    [cell.imageView sd_setImageWithURL:url];
+    
+    HLAppInfo *model = [[HLAppInfo alloc]init];
+    
+    
+    if (model.image != nil) {
+        cell.iconView.image = model.image;
+    } else {
+        UIImage *placeholder = [UIImage imageNamed:@"user_default"];
+        cell.iconView.image = placeholder;
+        
+        NSURL *url = [NSURL URLWithString:_appList[indexPath.row].icon];
+        
+        NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+            NSLog(@"download %@ image", _appList[indexPath.row].name);
+            
+            [NSThread sleepForTimeInterval:1.0];
+            
+            
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            UIImage *image = [UIImage imageWithData:data];
+            model.image = image;
+            
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                cell.iconView.image = image;
+            }];
+            
+        }];
+        
+        [_downloadQueue addOperation:op];
+        
+    }
+    
+//    [cell.imageView sd_setImageWithURL:url];
     
     return cell;
 }
@@ -61,6 +100,8 @@ static NSString *cellId = @"cellId";
         NSMutableArray *arrayM = [NSMutableArray array];
         for (NSDictionary *dict in responseObject) {
             HLAppInfo *model = [[HLAppInfo alloc]init];
+            
+            
             [model setValuesForKeysWithDictionary:dict];
             
             [arrayM addObject:model];
