@@ -13,6 +13,8 @@
 		F2654CFB1D9810BC00CC746E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2654CF91D9810BC00CC746E /* Main.storyboard */; };
 		F2654CFD1D9810BC00CC746E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2654CFC1D9810BC00CC746E /* Assets.xcassets */; };
 		F2654D001D9810BC00CC746E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2654CFE1D9810BC00CC746E /* LaunchScreen.storyboard */; };
+		F2654D0A1D98179600CC746E /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = F2654D091D98179600CC746E /* NSArray+Log.m */; };
+		F2654D0D1D981F9000CC746E /* HLAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F2654D0C1D981F9000CC746E /* HLAppInfo.m */; };
 		F482FF91FEE99560133C34A2 /* libPods-loadImageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 136F849113D2638F80F5EF97 /* libPods-loadImageView.a */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,10 @@
 		F2654CFC1D9810BC00CC746E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2654CFF1D9810BC00CC746E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2654D011D9810BC00CC746E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2654D081D98179600CC746E /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		F2654D091D98179600CC746E /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		F2654D0B1D981F9000CC746E /* HLAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HLAppInfo.h; path = ../HLAppInfo.h; sourceTree = "<group>"; };
+		F2654D0C1D981F9000CC746E /* HLAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HLAppInfo.m; path = ../HLAppInfo.m; sourceTree = "<group>"; };
 		F84C89B64F77381E202433B1 /* Pods-loadImageView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loadImageView.release.xcconfig"; path = "Pods/Target Support Files/Pods-loadImageView/Pods-loadImageView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +70,7 @@
 		F2654CE41D9810BC00CC746E = {
 			isa = PBXGroup;
 			children = (
+				F2654D071D98179600CC746E /* Log */,
 				F2654CEF1D9810BC00CC746E /* loadImageView */,
 				F2654CEE1D9810BC00CC746E /* Products */,
 				CC3E65308FBDFFC37033F0C6 /* Pods */,
@@ -86,6 +93,7 @@
 				F2654CF41D9810BC00CC746E /* AppDelegate.m */,
 				F2654CF61D9810BC00CC746E /* ViewController.h */,
 				F2654CF71D9810BC00CC746E /* ViewController.m */,
+				F2654D0E1D98D83500CC746E /* Model */,
 				F2654CF91D9810BC00CC746E /* Main.storyboard */,
 				F2654CFC1D9810BC00CC746E /* Assets.xcassets */,
 				F2654CFE1D9810BC00CC746E /* LaunchScreen.storyboard */,
@@ -101,6 +109,24 @@
 				F2654CF11D9810BC00CC746E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2654D071D98179600CC746E /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				F2654D081D98179600CC746E /* NSArray+Log.h */,
+				F2654D091D98179600CC746E /* NSArray+Log.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		F2654D0E1D98D83500CC746E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2654D0B1D981F9000CC746E /* HLAppInfo.h */,
+				F2654D0C1D981F9000CC746E /* HLAppInfo.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +253,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2654CF81D9810BC00CC746E /* ViewController.m in Sources */,
+				F2654D0A1D98179600CC746E /* NSArray+Log.m in Sources */,
+				F2654D0D1D981F9000CC746E /* HLAppInfo.m in Sources */,
 				F2654CF51D9810BC00CC746E /* AppDelegate.m in Sources */,
 				F2654CF21D9810BC00CC746E /* main.m in Sources */,
 			);

@@ -4,6 +4,7 @@ target 'loadImageView' do
 
 pod ‘AFNetworking’
 pod ‘YYModel’
+pod ’SDWebImage’
 
 
 
